@@ -1,8 +1,16 @@
 .App {
-  padding: 30px;
-  display: flex;
+
 }
 
-.App > div {
-  margin-right: 50px;
+.todoList {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.todoList > div {
+  padding: 10px;
+}
+
+.todoList-task {
+
 }
