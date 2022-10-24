@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 type TaskType = {
     id: number
@@ -12,7 +12,11 @@ type PropsType = {
     tasks: Array<TaskType>
 }
 
-export function ToDoList(props: PropsType) {
+export const ToDoList = (props: PropsType) => {
+    const [isChecked, setIsChecked] = useState(props.tasks[0].isDone);
+    const onChangeHandler = () => {
+        setIsChecked(!isChecked);
+    }
     return (
 
         <div>
@@ -22,7 +26,7 @@ export function ToDoList(props: PropsType) {
                 <button>+</button>
             </div>
             <ul>
-                <li><input type="checkbox" checked={props.tasks[0].isDone}/> <span>{props.tasks[0].title}</span></li>
+                <li><input type="checkbox" checked={isChecked} onChange={ onChangeHandler }/> <span>{props.tasks[0].title}</span></li>
                 <li><input type="checkbox" checked={props.tasks[1].isDone}/> <span>{props.tasks[1].title}</span></li>
                 <li><input type="checkbox" checked={props.tasks[2].isDone}/> <span>{props.tasks[2].title}</span></li>
             </ul>
