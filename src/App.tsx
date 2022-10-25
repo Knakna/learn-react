@@ -2,6 +2,19 @@ import React, {useState} from 'react';
 import NewComponent from './newComponent/NewComponent';
 
 
+export type TopCarType = {
+    manufacturer: string,
+    model: string
+}
+
+
+const topCars: TopCarType[] = [
+    {manufacturer: 'BMW', model: 'm5cs'},
+    {manufacturer: 'Mercedes', model: 'e63s'},
+    {manufacturer: 'Audi', model: 'rs6'}
+]
+
+
 function App() {
     const [students, setStudents] = useState([
             {id: 1, name: "James", age: 8},
@@ -17,9 +30,18 @@ function App() {
             {id: 11, name: "Christopher", age: 100},
         ]
     )
+
+    const addStudent = () => {
+        setStudents([...students, {id: 12, name: "Chris", age: 101}])
+    }
+
     return (
         <>
-             <NewComponent students={students}/>
+             <NewComponent
+                 students={students}
+                 topCars={topCars}
+             />
+             <button onClick={addStudent}>add student</button>
         </>
 
 

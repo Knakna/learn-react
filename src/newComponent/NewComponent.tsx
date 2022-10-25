@@ -1,10 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
+import {TopCarType} from '../App';
 
 
 // methode map
 
 type NewComponentType = {
     students: Array<StudentType>
+    topCars: TopCarType[]
     // students: StudentType[]
 }
 
@@ -13,27 +15,60 @@ type StudentType = {
     name: string,
     age: number
 }
+//
+// type TopCarsType = {
+//     cars: Array<TopCarType>
+// }
 
-function NewComponent(props: NewComponentType) {
+
+function NewComponent({students, topCars}: NewComponentType) {
     // debugger
+
     return (
-        <ul>
-            {props.students.map((objectFromStudentArray, index) => {
-                debugger
-                return (
-                    <li key={objectFromStudentArray.id}>
-                        <span>{objectFromStudentArray.id}</span>
 
-                        <span>{objectFromStudentArray.name} </span>
-                        <span>Возраст: {objectFromStudentArray.age}</span>
+        <>
+            <ul>
+                {students.map((student: StudentType, index) => {
+                    return (
+                        <li key={index + 1}>
+                            <span>{student.id}</span>
+                            <span>{student.name} </span>
+                            <span>Возраст: {student.age}</span>
+                        </li>
+                    )
+                })}
+            </ul>
 
+            <table>
+                <thead>
+                <tr>
+                    <th>
+                        Марка
+                    </th>
+                    <th>
+                        Модель
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    topCars.map((car, index) => {
+                        return (
+                            <tr key={index}>
+                                <td>
+                                    {car.manufacturer}
+                                </td>
+                                <td>
+                                    {car.model}
+                                </td>
+                            </tr>
+                        )
+                    })
+                }
+                </tbody>
+            </table>
+        </>
 
-
-                    </li>
-                )
-            } )}
-
-        </ul>
     );
 }
 
