@@ -20,12 +20,71 @@ type StudentType = {
 //     cars: Array<TopCarType>
 // }
 
+type StreetType = {
+    area: string
+    name: string
+}
+
+type AdressType = {
+    city: string
+    country: string
+    street: StreetType
+
+}
+type TechArray = {
+    index: number
+    html: boolean
+
+}
+
+type SchoolType = {
+    id: number
+    name: string
+    isActive: boolean
+    fruits: Array<string>
+    adress: AdressType
+    tech: Array<TechArray>
+}
+
+
+const school: SchoolType = {
+
+    id: 1,
+    name: 'sport',
+    isActive: true,
+    fruits: ['Банан', 'Апельсин', 'Яблоко', 'Манго'],
+    adress: {
+        city: 'Minsk',
+        country: 'RB',
+        street: {
+            area: 'Pervomajski',
+            name: 'Gintovta'
+        }
+    },
+    tech: [
+        {
+            index: 1,
+            html: true
+        },
+        {
+            index: 2,
+            html: false
+        }
+    ]
+
+}
 
 function NewComponent({students, topCars}: NewComponentType) {
     // debugger
+    console.log('gggg')
+    console.log(school.fruits[2])
+    console.log(school.fruits.length)
+    console.log(school.adress.street.area)
+    console.log(school.tech.length)
+
+
 
     return (
-
         <>
             <ul>
                 {students.map((student: StudentType, index) => {
@@ -105,3 +164,5 @@ export default NewComponent;
 // }
 //
 //     export default App;
+
+
