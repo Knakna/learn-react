@@ -1,5 +1,10 @@
 import React, {useState} from 'react';
 import NewComponent from './newComponent/NewComponent';
+import {ToDoList} from './ToDoList';
+import Accordion from './react/accordion/Accordion';
+import Title from './react/title/Title';
+import {Rating} from './react/rating/Rating';
+import OnOff from './react/onOff/OnOff';
 
 
 export type TopCarType = {
@@ -17,31 +22,53 @@ const topCars: TopCarType[] = [
 
 function App() {
     const [students, setStudents] = useState([
-            {id: 1, name: "James", age: 8},
-            {id: 2, name: "Robert", age: 18},
-            {id: 3, name: "John", age: 28},
-            {id: 4, name: "Michael", age: 38},
-            {id: 5, name: "William", age: 48},
-            {id: 6, name: "David", age: 58},
-            {id: 7, name: "Richard", age: 68},
-            {id: 8, name: "Joseph", age: 78},
-            {id: 9, name: "Thomas", age: 88},
-            {id: 10, name: "Charles", age: 98},
-            {id: 11, name: "Christopher", age: 100},
+            {id: 1, name: 'James', age: 8},
+            {id: 2, name: 'Robert', age: 18},
+            {id: 3, name: 'John', age: 28},
+            {id: 4, name: 'Michael', age: 38},
+            {id: 5, name: 'William', age: 48},
+            {id: 6, name: 'David', age: 58},
+            {id: 7, name: 'Richard', age: 68},
+            {id: 8, name: 'Joseph', age: 78},
+            {id: 9, name: 'Thomas', age: 88},
+            {id: 10, name: 'Charles', age: 98},
+            {id: 11, name: 'Christopher', age: 100},
         ]
     )
 
     const addStudent = () => {
-        setStudents([...students, {id: 12, name: "Chris", age: 101}])
+        setStudents([...students, {id: 12, name: 'Chris', age: 101}])
     }
 
     return (
         <>
-             <NewComponent
-                 students={students}
-                 topCars={topCars}
-             />
-             <button onClick={addStudent}>add student</button>
+
+            <ToDoList title={'hello'} tasks={[
+                {
+                    id: 22,
+                    title: 'string',
+                    isDone: true
+                }]}/>
+            <NewComponent
+                students={students}
+                topCars={topCars}
+            />
+            <button onClick={addStudent}>add student</button>
+            <Title value={'Title1'}/>
+            <Title value={'Title2'}/>
+            <Title/>
+            <Rating value={0}/>
+            <Accordion title={"menu"} number={23} collapsed={false}/>
+            <Accordion title={"users"} number={55} collapsed={true}/>
+            <Rating value={1}/>
+            <Rating value={2}/>
+            <Rating value={3}/>
+            <Rating value={4}/>
+            <Rating value={5}/>
+            <Rating value={0}/>
+            <OnOff on={true}/>
+            <OnOff on={false}/>
+
         </>
 
 
@@ -49,7 +76,6 @@ function App() {
 }
 
 export default App;
-
 
 
 // tests
