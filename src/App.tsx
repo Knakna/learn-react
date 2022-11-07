@@ -5,6 +5,8 @@ import Accordion from './react/accordion/Accordion';
 import Title from './react/title/Title';
 import {Rating} from './react/rating/Rating';
 import OnOff from './react/onOff/OnOff';
+import {Button} from './react/Button';
+import {UniversalButton} from './react/UniversalButton';
 
 
 export type TopCarType = {
@@ -40,8 +42,27 @@ function App() {
         setStudents([...students, {id: 12, name: 'Chris', age: 101}])
     }
 
+    const Button1Foo = (sub: string, age: number, adress: string) => {
+        console.log(sub, age, adress)
+    }
+
+    const Button2Foo = (sub: string) => {
+        console.log(sub)
+    }
+
+    const Button3Foo = () => {
+        console.log('zero')
+    }
+
     return (
         <>
+            <UniversalButton name={'1'} callBack={() => Button1Foo('Vasia', 21, 'Minsk')}/>
+            {/*<UniversalButton name ={'2'} callBack={Button2Foo}/>*/}
+            <UniversalButton name={'2'} callBack={() => Button2Foo('Olia')}/>
+            <UniversalButton name={'zero'} callBack={Button3Foo}/>
+
+            <Button/>
+
 
             <ToDoList title={'hello'} tasks={[
                 {
@@ -58,8 +79,8 @@ function App() {
             <Title value={'Title2'}/>
             <Title/>
             <Rating value={0}/>
-            <Accordion title={"menu"} number={23} collapsed={false}/>
-            <Accordion title={"users"} number={55} collapsed={true}/>
+            <Accordion title={'menu'} number={23} collapsed={false}/>
+            <Accordion title={'users'} number={55} collapsed={true}/>
             <Rating value={1}/>
             <Rating value={2}/>
             <Rating value={3}/>
