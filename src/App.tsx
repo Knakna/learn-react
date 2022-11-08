@@ -5,8 +5,11 @@ import Accordion from './react/accordion/Accordion';
 import Title from './react/title/Title';
 import {Rating} from './react/rating/Rating';
 import OnOff from './react/onOff/OnOff';
+import {Counter} from './react/Counter';
 import {Button} from './react/Button';
 import {UniversalButton} from './react/UniversalButton';
+import {UseState} from './react/UseState';
+import {Filter} from './react/Filter';
 
 
 export type TopCarType = {
@@ -42,6 +45,8 @@ function App() {
         setStudents([...students, {id: 12, name: 'Chris', age: 101}])
     }
 
+
+
     const Button1Foo = (sub: string, age: number, adress: string) => {
         console.log(sub, age, adress)
     }
@@ -54,15 +59,22 @@ function App() {
         console.log('zero')
     }
 
+
+
     return (
         <>
+
+            <Filter/>
+            <UseState/>
+
             <UniversalButton name={'1'} callBack={() => Button1Foo('Vasia', 21, 'Minsk')}/>
             {/*<UniversalButton name ={'2'} callBack={Button2Foo}/>*/}
             <UniversalButton name={'2'} callBack={() => Button2Foo('Olia')}/>
             <UniversalButton name={'zero'} callBack={Button3Foo}/>
 
             <Button/>
-
+            <Counter/>
+            <Counter/>
 
             <ToDoList title={'hello'} tasks={[
                 {

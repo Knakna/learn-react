@@ -6,8 +6,10 @@ import {TopCarType} from '../App';
 
 type NewComponentType = {
     students: Array<StudentType>
-    topCars: TopCarType[]
     // students: StudentType[]
+
+    // topCars: TopCarType[]
+    topCars: Array<TopCarType>
 }
 
 type StudentType = {
@@ -81,7 +83,6 @@ function NewComponent({students, topCars}: NewComponentType) {
     console.log(school.fruits.length)
     console.log(school.adress.street.area)
     console.log(school.tech.length)
-
 
 
     return (
