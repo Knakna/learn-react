@@ -21,7 +21,3 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-
-
-src/react/Filter.tsx
-src/react/FilterProps.tsx

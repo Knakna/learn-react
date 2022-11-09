@@ -12,7 +12,7 @@ export function UseState() {
     }
 
     const onClickHandler0 = () => {
-        setA(a=0);
+        setA(a = 0);
         console.log(a)
     }
 

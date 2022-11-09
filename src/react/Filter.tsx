@@ -23,7 +23,7 @@ export function Filter() {
         {banknots: 'RUBLS', value: 50, number: ' v1234567890'},
     ])
 
-    const[filter,setFilter] = useState<FilterType>('all')
+    const [filter, setFilter] = useState<FilterType>('all')
 
     let currentMoney = money;
     if (filter === 'Dollars') {
@@ -44,7 +44,6 @@ export function Filter() {
                 currentMoney={currentMoney}
                 onClickFilterHandler={onClickFilterHandler}
             />
-
         </div>
     );
 }

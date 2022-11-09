@@ -10,7 +10,6 @@ type FilterPropsType = {
 
 export function FilterProps({currentMoney, onClickFilterHandler}: FilterPropsType) {
 
-
     return (
         <div>
             <ul>
@@ -31,7 +30,6 @@ export function FilterProps({currentMoney, onClickFilterHandler}: FilterPropsTyp
                 <button onClick={() => onClickFilterHandler('RUBLS')}>rubls</button>
                 <button onClick={() => onClickFilterHandler('Dollars')}>dollar</button>
             </div>
-
         </div>
     );
 }
