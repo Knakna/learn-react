@@ -10,6 +10,8 @@ import {Button} from './react/Button';
 import {UniversalButton} from './react/UniversalButton';
 import {UseState} from './react/UseState';
 import {Filter} from './react/Filter';
+import Input from './react/input/Input';
+import './App.css'
 
 
 export type TopCarType = {
@@ -46,7 +48,6 @@ function App() {
     }
 
 
-
     const Button1Foo = (sub: string, age: number, adress: string) => {
         console.log(sub, age, adress)
     }
@@ -60,10 +61,9 @@ function App() {
     }
 
 
-
     return (
-        <>
-
+        <div className="App">
+            <Input/>
             <Filter/>
             <UseState/>
 
@@ -102,7 +102,7 @@ function App() {
             <OnOff on={true}/>
             <OnOff on={false}/>
 
-        </>
+        </div>
 
 
     );

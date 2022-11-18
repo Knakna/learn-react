@@ -87,17 +87,6 @@ function NewComponent({students, topCars}: NewComponentType) {
 
     return (
         <>
-            <ul>
-                {students.map((student: StudentType, index) => {
-                    return (
-                        <li key={index + 1}>
-                            <span>{student.id}</span>
-                            <span>{student.name} </span>
-                            <span>Возраст: {student.age}</span>
-                        </li>
-                    )
-                })}
-            </ul>
 
             <table>
                 <thead>
@@ -127,6 +116,19 @@ function NewComponent({students, topCars}: NewComponentType) {
                 }
                 </tbody>
             </table>
+
+            <ul>
+                {students.map((student: StudentType, index) => {
+                    return (
+                        <li key={index + 1}>
+                            <span>{student.id}</span>
+                            <span>{student.name} </span>
+                            <span>Возраст: {student.age}</span>
+                        </li>
+                    )
+                })}
+            </ul>
+
         </>
 
     );
