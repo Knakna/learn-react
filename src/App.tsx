@@ -12,6 +12,7 @@ import {UseState} from './react/UseState';
 import {Filter} from './react/Filter';
 import Input from './react/input/Input';
 import './App.css'
+import LocalOnOff from './react/localUseState/localOnOff/LocalOnOff';
 
 
 export type TopCarType = {
@@ -63,6 +64,10 @@ function App() {
 
     return (
         <div className="App">
+
+            <LocalOnOff/>
+            <LocalOnOff/>
+
             <Input/>
             <Filter/>
             <UseState/>
