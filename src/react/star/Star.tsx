@@ -6,13 +6,19 @@ type StarType = {
 }
 
 function Star(props: StarType) {
+
+    const styleStar = {
+        width: '26px',
+        display: 'inline-block'
+    }
+
     if (props.selected === true) {
         return (
-            <span> <b>star</b> </span>
+            <span style={styleStar}> <b>star</b> </span>
         )
     } else {
         return (
-            <span>star </span>
+            <span style={styleStar}>star </span>
         );
     }
 }

@@ -13,6 +13,8 @@ import {Filter} from './react/Filter';
 import Input from './react/input/Input';
 import './App.css'
 import LocalOnOff from './react/localUseState/localOnOff/LocalOnOff';
+import UncontrolledAccordion from './react/localUseState/uncontrolledAccordion/UncontrolledAccordion';
+import {UncontrolledRating} from './react/localUseState/uncontrolledRating/UncontrolledRating';
 
 
 export type TopCarType = {
@@ -64,6 +66,9 @@ function App() {
 
     return (
         <div className="App">
+
+            <UncontrolledRating/>
+            <UncontrolledAccordion title={'title'} number={5}/>
 
             <LocalOnOff/>
             <LocalOnOff/>
